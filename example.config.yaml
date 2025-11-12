@@ -1,0 +1,31 @@
+# This is an example configuration file for the diag CLI tool
+# collectors:
+#   - name: cpu
+#     enabled: true
+#   - name: memory
+#     enabled: true
+#   - name: disk
+#     enabled: true
+#   - name: network
+#     enabled: true
+# output:
+#   format: table
+#   destination: stdout
+# logging:
+#   level: info
+#   file: diag.log  
+# version:
+#   current: 1.0.0
+#   check_for_updates: true 
+# End of example configuration file
+
+output: table
+ui:
+  no_color: false
+log:
+  level: info
+net:
+  ping_host: 8.8.8.8
+  ping_count: 2
+process:
+  default_top: 5
