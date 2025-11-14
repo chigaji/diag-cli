@@ -19,6 +19,22 @@ A cross‑platform (Linux/macOS/Windows) system diagnostics CLI.
 
 ```bash
 make build
-./bin/diag sys --all
+```
+
+## Usage
+
+```bash
+# how to use instructions
+./bin/diag --help 
+
+
+
+# Show system metrics
+./bin/diag sys --all --c config.yaml
+
+# Show network diagnostics
 ./bin/diag net --iface eth0
+
+# Show top processes
 ./bin/diag proc --top 10 --sort cpu
+```
