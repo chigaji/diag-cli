@@ -40,6 +40,7 @@ func main() {
 			if logLvl != "" {
 				viper.Set("log.level", logLvl)
 			}
+
 			viper.Set("ui.no_color", noColor)
 
 			// logger
@@ -48,7 +49,7 @@ func main() {
 		},
 	}
 
-	root.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file path (default is $HOME/.diag.yaml)")
+	root.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file path (default is $DIR/config.yaml)")
 	root.PersistentFlags().StringVarP(&output, "output", "o", "", "output format: table|json|yaml")
 	root.PersistentFlags().BoolVar(&noColor, "no-color", false, "disable color output")
 	root.PersistentFlags().StringVar(&logLvl, "log-level", "", "log level: debug|info|warn|error")
@@ -64,7 +65,7 @@ func main() {
 			fmt.Println(version.FullVersion())
 		},
 	})
-
+	root.CompletionOptions.DisableDefaultCmd = true
 	if err := root.Execute(); err != nil {
 		fmt.Println("Error:", err)
 		os.Exit(1)

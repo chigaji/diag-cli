@@ -1,12 +1,25 @@
-output: table # 'table', 'json', or 'yaml'
-log:
-  level: info # 'debug', 'info', 'warn', 'error'
-net:
-  ping_host: 8.8.8.8 
-  ping_count: 2
-process:
-  default_top: 5
+# output: table # 'table', 'json', or 'yaml'
+# log:
+#   level: info # 'debug', 'info', 'warn', 'error'
+# net:
+#   ping_host: 8.8.8.8 
+#   ping_count: 2
+# process:
+#   default_top: 5
 
 # End of configuration file
 
 # ENV overrides (prefix DIAG_): DIAG_OUTPUT=json, DIAG_LOG_LEVEL=debug.
+
+output: table
+ui:
+  no_color: false
+log:
+  level: info
+net:
+  ping_host: 8.8.8.8
+  ping_count: 2
+process:
+  top: 3
+
+# process.default_top
